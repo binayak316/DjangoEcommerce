@@ -27,6 +27,7 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     size = models.CharField(max_length=10, choices=size_choices, default = '7', null= True, blank="True")
     outfit = models.CharField(max_length=10, choices=outfit_choices, default='casual')
+    discount_price = models.FloatField(null=True, blank="True")
 
     class Meta:
         ordering = ('-created_at',)

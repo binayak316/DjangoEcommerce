@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import Product
 from django.db.models import Q
 # Create your views here.
+
+
 def index(request):
     search_query = request.GET.get('search', '')
     if search_query:
@@ -12,3 +14,11 @@ def index(request):
         'post':post,
     }
     return render(request, 'EcomWebApp/index.html', context)
+
+
+def detail(request, pk):
+    post = Product.objects.get(id=pk)
+    context ={
+        'post': post,
+    }
+    return render(request, 'EcomWebApp/details.html', context)

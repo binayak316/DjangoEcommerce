@@ -2,9 +2,9 @@
 {% load static %}
 {% block content %}
 
-<div class="container mt-5 mb-5">
-    <div class="d-flex justify-content-center row">
-        <div class="col-md-10">
+<div class="container  mb-5 contentdiv">
+    <div class="d-flex justify-content-center row contentdivv">
+        <div class="col-md-10 mt-1">
             {% for items in post %}
             <div class="row p-2 bg-white border rounded">
                 <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image"
@@ -24,12 +24,16 @@
                 </div>
                 <div class="align-items-center align-content-center col-md-3 border-left mt-1">
                     <div class="d-flex flex-row align-items-center">
-                        <h4 class="mr-1">${{items.price}}</h4><span class="strike-text">${{items.price}}</span>
+                        <h4 class="mr-1">${{items.price}}</h4>
+                        <span class="strike-text">
+                            {{ items.discount_price|default_if_none:"" }}
+                        </span>
                     </div>
                     <h6 class="text-success">Free shipping</h6>
-                    <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm"
-                            type="button">Details</button><button class="btn btn-outline-primary btn-sm mt-2"
-                            type="button">Add to wishlist</button></div>
+                    <div class="d-flex flex-column mt-4">
+                        <a href="{%url 'detail-page' items.id %}" class="btn btn-primary btn-sm">Details</a>
+                        <a href="" class="btn btn-outline-primary btn-sm mt-2">Add to wishlist</a>
+                    </div>
                 </div>
             </div>
             {% endfor %}
