@@ -7,8 +7,8 @@
         <div class="col-md-10 mt-1">
             {% for items in post %}
             <div class="row p-2 bg-white border rounded">
-                 <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image"
-                        src="{{items.image.url}}"></div>
+                 <div class="col-md-3 mt-1" style="border:1px solid rgb(179, 175, 175);padding:1px;"><img class="img-fluid img-responsive rounded product-image"
+                        src="{{items.imageURL}}" alt="product-image"></div>
                 <div class="col-md-6 mt-1">
                     <h5>{{items.name}}</h5>
                     <div class="d-flex flex-row">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="align-items-center align-content-center col-md-3 border-left mt-1">
                     <div class="d-flex flex-row align-items-center">
-                        <h4 class="mr-1">${{items.price}}</h4>
+                        <h4 class="mr-1">${{items.price|floatformat:2}}</h4> 
                         <span class="strike-text">
                             {{ items.discount_price|default_if_none:"" }}
                         </span>

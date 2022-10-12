@@ -6,8 +6,8 @@
     <div class="d-flex justify-content-center row contentdivv">
         <div class="col-md-10 mt-5">
             <div class="row p-2 bg-white border rounded thisdiv">
-                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image small-image"
-                        src="{{post.image.url}}"></div>
+                <div class="col-md-3 mt-1" style="border:1px solid rgb(179, 175, 175);"><img class="img-fluid img-responsive rounded product-image small-image"
+                        src="{{post.imageURL}}" alt="product-image" ></div>
                 <div class="col-md-6 mt-1">
                     <h5>{{post.name}}</h5>
                     <div class="d-flex flex-row">
@@ -38,7 +38,7 @@
  <!-- pop up model for image -->
 <div id="image_popup">
     <button class="close-btn"> X</button> <br>
-    <img class="img-fluid  img-responsive rounded product-image large-image" src="{{post.image.url}}">
+    <img class="img-fluid  img-responsive rounded product-image large-image" src="{{post.imageURL}}">
 
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
