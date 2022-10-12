@@ -1,0 +1,75 @@
+{% extends 'EcomWebApp/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container contentdiv"">
+    <div class=" row contentdivv">
+
+    <div class="col-lg-6 cartfun">
+
+        <div class="box-element" id="form-wrapper">
+            <form action="" method="" id="form">
+                <div class="" id="user-info">
+                    <div class="form-field">
+                        <input type="text" class="form-control" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="form-field">
+                        <input type="email" class="form-control" name="email" placeholder="eg.example@gmail.com"
+                            required>
+                    </div>
+                </div>
+
+                <div class="" id="shipping-info">
+                    <hr>
+                    <p class="d-flex justify-content-center">Shipping Information:</p>
+                    <hr>
+                    <div class="form-field">
+                        <input type="text" name="address" class="form-control" placeholder="Address...">
+                    </div>
+                    <div class="form-field">
+                        <input type="text" name="city" class="form-control" placeholder="City...">
+                    </div>
+                    <div class="form-field">
+                        <input type="text" name="state" class="form-control" placeholder="State...">
+                    </div>
+                    <div class="form-field">
+                        <input type="text" name="postalcode" class="form-control" placeholder="PostalCode...">
+                    </div>
+
+                </div>
+                <hr>
+                <div class="d-flex justify-content-center">
+                    <input type="submit" id="form-button" class="btn btn-outline-primary col-6 mb-2" value="Continue">
+                </div>
+            </form>
+        </div>
+        <br>
+        <div class="box-element hidden" id="paymenet-info">
+            <small>Khalti</small>
+        </div>
+
+    </div>
+    <div class="col-lg-6 cartfun">
+        <div class="box-element ">
+            <a href="{% url 'cart' %}" class="btn btn-outline-dark" style="margin:10px;"><i class="fa fa-angle-left"
+                    style="font-size: 17px;"> &nbsp; &nbsp;</i>Back to cart</a>
+            <hr>
+            <p class="d-flex justify-content-center">Order Summary:</p>
+            <hr>
+            <div class="cart-row">
+                <div style="flex:2"><img class="product-image-cart-page" src="" alt="product-picture"></div>
+                <div style="flex:2">product1</div>
+                <div style="flex:1">$20</div>
+                <div style="flex:1">
+                    <p class="quantity"> x2</p>
+                </div>
+            </div>
+            <h6>Items:</h6>
+            <h6>Total:</h6>
+        </div>
+
+    </div>
+</div>
+</div>
+
+{% endblock %}

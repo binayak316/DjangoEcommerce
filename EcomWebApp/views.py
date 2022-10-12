@@ -22,3 +22,15 @@ def detail(request, pk):
         'post': post,
     }
     return render(request, 'EcomWebApp/details.html', context)
+
+def cart(request):
+    context ={
+
+    }
+    return render(request, 'EcomWebApp/cart.html', context)
+
+def checkout(request):
+    context ={
+
+    }
+    return render(request, 'EcomWebApp/checkout.html', context)
