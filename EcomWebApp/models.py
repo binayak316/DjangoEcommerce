@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 
 class Product(models.Model):
     GENDER_CHOICES = (
-        ('M','Male'),
-        ('F','Female'),
+        ('Male','Male'),
+        ('Female','Female'),
     )
     size_choices = (
         ('7','7'),
@@ -29,7 +29,7 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     size = models.CharField(max_length=10, choices=size_choices, default = '7', null= True, blank="True")
     outfit = models.CharField(max_length=10, choices=outfit_choices, default='casual')
-    discount_price = models.FloatField(null=True, blank="True")
+    discount_price = models.FloatField(default=0, null=True, blank="True")
     # if the product is digital then no need to ship it if the product is not digital then it needs to be ship (ref from denis ivy)
     digital = models.BooleanField(default=False, null=True, blank=True)
 
@@ -96,7 +96,9 @@ class OrderItem(models.Model):
 
     @property
     def get_total(self):
-        total = self.product.price * self.quantity
+        # total = (self.product.price * self.quantity)- self.product.discount_price
+        total = (self.product.price - self.product.discount_price) * self.quantity
+            
         return total
 
 class ShippingAddress(models.Model):

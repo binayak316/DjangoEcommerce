@@ -39,14 +39,14 @@
                 </div>
                 <hr>
                 <div class="d-flex justify-content-center">
-                    <input type="submit" id="form-button" class="btn btn-outline-primary col-6 mb-2" value="Continue">
+                    <input type="submit" id="form-button" class="btn btn-outline-dark col-6 mb-2" value="Continue">
                 </div>
             </form>
         </div>
         <br>
-        <div class="box-element hidden" id="paymenet-info">
+        <div class="box-element hidden" id="paymenet-info" style="padding: 10px;">
             <small>Payment options</small>
-            <button class="btn btn-outline-dark" id="make-payment">Make Paymenet</button>
+            <button class="btn btn-outline-dark" id="make-payment">Make Payment</button>
         </div>
 
     </div>
@@ -56,18 +56,18 @@
                 <a href="{% url 'cart' %}" class="btn btn-outline-dark" style="margin:10px;"><i class="fa fa-angle-left"
                         style="font-size: 17px;"> &nbsp; &nbsp;</i>Back to cart</a>
                 <div style="height: 40px;">
-                    <form class="d-flex mt-2 mx-5" role="search" method="" action="">
+                    <!-- <form class="d-flex mt-2 mx-5" role="search" method="" action="">
                         <input class="form-control me-2" type="search" name="search" placeholder="Search "
                             aria-label="Search">
                         <button class="btn btn-primary btn-sm" type="submit">Search</button>
-                    </form>
+                    </form> -->
                 </div>
             </div>
             <hr>
             <p class="d-flex justify-content-center">Order Summary:</p>
-            <div class="d-flex justify-content-center bg-info" style="padding:10px;">
-                <h6 class="mx-5">Items:{{order.get_cart_items}}</h6>
-                <h6 class="mx-3">Total:${{order.get_cart_total|floatformat:2}}</h6>
+            <div class="d-flex justify-content-center bg-dark" style="padding:10px;">
+                <h6 class="mx-5 text-white">Items:{{order.get_cart_items}}</h6>
+                <h6 class="mx-3 text-white">Total:${{order.get_cart_total|floatformat:2}}</h6>
 
             </div>
             <hr>
@@ -76,7 +76,7 @@
                 <div style="flex:2"><img class="product-image-cart-page mx-2" src="{{item.product.imageURL}}"
                         alt="product-picture"></div>
                 <div style="flex:2">{{item.product.name}}</div>
-                <div style="flex:1">${{item.product.price}}</div>
+                <div style="flex:1">${{item.get_total|floatformat:2}}</div>
                 <div style="flex:1">
                     <p class="quantity"> x{{item.quantity}}</p>
                 </div>
