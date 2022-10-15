@@ -16,14 +16,14 @@
                         <h6>Total: <strong>${{order.get_cart_total|floatformat:2}}</strong></h5>
                     </th>
                     <th>
-                        <a href="{% url 'checkout' %}" class="btn btn-primary" style="float:right;">Checkout</a>
+                        <a href="{% url 'checkout' %}" class="btn btn-primary" style="float:right;margin-top: -15px;">Checkout</a>
                     </th>
                 </tr>
             </table>
         </div> <br>
         <br>
         <div class="box-element">
-            <div class="cart-row">
+            <div class="cart-row" style="padding: 10px;">
                 <div style="flex:2"></div>
                 <div style="flex:2"><strong>Name</strong></div>
                 <div style="flex:1"><strong>Price</strong></div>
@@ -38,8 +38,8 @@
                 <div style="flex:1">
                     <p class="quantity">{{item.quantity}}</p>
                     <div class="quantity">
-                        <img class="image-quantity" src="{% static 'EcomWebApp/images/up-quantity.png' %}" alt="">
-                        <img class="image-quantity" src="{% static 'EcomWebApp/images/down-quantity.png' %}" alt="">
+                        <img data-product="{{item.product.id}}" data-action="add" class="image-quantity update-cart" src="{% static 'EcomWebApp/images/up-quantity.png' %}" alt="">
+                        <img data-product="{{item.product.id}}" data-action="remove" class="image-quantity update-cart" src="{% static 'EcomWebApp/images/down-quantity.png' %}" alt="">
                     </div>
                     
                 </div>

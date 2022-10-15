@@ -32,7 +32,8 @@
                     <h6 class="text-success">Free shipping</h6>
                     <div class="d-flex flex-column mt-4">
                         <a href="{%url 'detail-page' items.id %}" class="btn btn-primary btn-sm">Details</a>
-                        <a href="" class="btn btn-outline-primary btn-sm mt-2">Add to wishlist</a>
+                        <!-- <a href="#"  data-product="{{items.id}}" data-action="add" class="btn btn-outline-primary btn-sm mt-2 update-cart">Add to Cart</a> -->
+                        <button data-product="{{items.id}}" data-action="add" class="btn btn-outline-primary btn-sm mt-2 update-cart">Add to Cart</button>
                     </div>
                 </div>
             </div>
